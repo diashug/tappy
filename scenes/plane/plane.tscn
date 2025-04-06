@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://dja73fj2xddxi"]
 
-[ext_resource type="Script" path="res://scenes/plane/plane.gd" id="1_3wu7u"]
+[ext_resource type="Script" uid="uid://mro11th7rgeb" path="res://scenes/plane/plane.gd" id="1_3wu7u"]
 [ext_resource type="Texture2D" uid="uid://dg87p82a6rnd" path="res://assets/plane/planes_sheet.png" id="1_v7x21"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hkdma"]
@@ -69,8 +69,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uxl60"]
 _data = {
-"RESET": SubResource("Animation_c7hs5"),
-"power": SubResource("Animation_5rnv6")
+&"RESET": SubResource("Animation_c7hs5"),
+&"power": SubResource("Animation_5rnv6")
 }
 
 [node name="Plane" type="CharacterBody2D" groups=["Plane"]]
@@ -88,5 +88,5 @@ shape = SubResource("CircleShape2D_fq00x")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_uxl60")
+&"": SubResource("AnimationLibrary_uxl60")
 }
