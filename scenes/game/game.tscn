@@ -17,10 +17,6 @@ script = ExtResource("1_jwokf")
 
 [node name="Hud" parent="CanvasLayer" instance=ExtResource("3_bdhmt")]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(338, 376)
-texture = ExtResource("1_oo4vf")
-
 [node name="Plane" parent="." instance=ExtResource("2_wocu4")]
 position = Vector2(78, 92)
 
@@ -44,5 +40,10 @@ wait_time = 1.2
 autostart = true
 
 [node name="PipesHolder" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(338, 376)
+texture = ExtResource("1_oo4vf")
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
