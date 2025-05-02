@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5gtoe8mme85k"]
+
+[ext_resource type="Script" uid="uid://1dsj5oro8k5y" path="res://scenes/scrolling_bg/scrolling_bg.gd" id="1_muaqa"]
+[ext_resource type="PackedScene" uid="uid://c1qooofucl0uf" path="res://scenes/scrolling_layer/scrolling_layer.tscn" id="1_ypoyy"]
+[ext_resource type="Texture2D" uid="uid://b6wnvo2tdgj0c" path="res://assets/background/sky.png" id="2_7jecx"]
+[ext_resource type="Texture2D" uid="uid://mfmbsjwayepd" path="res://assets/background/clouds_2.png" id="3_muaqa"]
+[ext_resource type="Texture2D" uid="uid://dxclhnqnnelg6" path="res://assets/background/rocks_1.png" id="4_3ax48"]
+[ext_resource type="Texture2D" uid="uid://bst2y0hl1sjul" path="res://assets/background/rocks_2.png" id="5_mnqyq"]
+
+[node name="ScrollingBg" type="ParallaxBackground"]
+script = ExtResource("1_muaqa")
+
+[node name="SkyLayer" parent="." instance=ExtResource("1_ypoyy")]
+texture = ExtResource("2_7jecx")
+
+[node name="CloudsLayer" parent="." instance=ExtResource("1_ypoyy")]
+texture = ExtResource("3_muaqa")
+scroll_scale = 0.3
+
+[node name="Rocks1Layer" parent="." instance=ExtResource("1_ypoyy")]
+texture = ExtResource("4_3ax48")
+scroll_scale = 0.5
+
+[node name="Rocks2Layer" parent="." instance=ExtResource("1_ypoyy")]
+texture = ExtResource("5_mnqyq")
+scroll_scale = 0.75
