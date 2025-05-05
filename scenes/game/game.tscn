@@ -1,18 +1,46 @@
-[gd_scene load_steps=9 format=3 uid="uid://d4byo851i21n1"]
+[gd_scene load_steps=13 format=3 uid="uid://d4byo851i21n1"]
 
 [ext_resource type="Script" uid="uid://bqdjveotav52t" path="res://scenes/game/game.gd" id="1_jwokf"]
 [ext_resource type="Texture2D" uid="uid://bst2y0hl1sjul" path="res://assets/background/rocks_2.png" id="1_oo4vf"]
+[ext_resource type="PackedScene" uid="uid://drtk0y64xdcj0" path="res://scenes/parallax_image/parallax_image.tscn" id="2_2a8rs"]
 [ext_resource type="PackedScene" uid="uid://bu8aepvs52wsa" path="res://scenes/game_over_ui/game_over_ui.tscn" id="2_5i0tg"]
 [ext_resource type="PackedScene" uid="uid://b5gtoe8mme85k" path="res://scenes/scrolling_bg/scrolling_bg.tscn" id="2_87uf6"]
 [ext_resource type="PackedScene" uid="uid://dja73fj2xddxi" path="res://scenes/plane/plane.tscn" id="2_wocu4"]
+[ext_resource type="Texture2D" uid="uid://b6wnvo2tdgj0c" path="res://assets/background/sky.png" id="3_5jirj"]
 [ext_resource type="PackedScene" uid="uid://c6afvp8fym84d" path="res://scenes/hud/hud.tscn" id="3_bdhmt"]
 [ext_resource type="PackedScene" uid="uid://d3pwguohhto2r" path="res://scenes/barrier/barrier.tscn" id="3_kop4d"]
 [ext_resource type="PackedScene" uid="uid://dmqvqpg5wcpgn" path="res://scenes/pipes/pipes.tscn" id="4_tbs7p"]
+[ext_resource type="Texture2D" uid="uid://mfmbsjwayepd" path="res://assets/background/clouds_2.png" id="4_vaxfo"]
+[ext_resource type="Texture2D" uid="uid://dxclhnqnnelg6" path="res://assets/background/rocks_1.png" id="5_ftsea"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_jwokf")
 
+[node name="ParallaxBg" type="Node2D" parent="."]
+z_index = -4
+position = Vector2(0, 427)
+
+[node name="Sky" parent="ParallaxBg" instance=ExtResource("2_2a8rs")]
+scroll_scale = Vector2(0, 0)
+texture = ExtResource("3_5jirj")
+
+[node name="Clouds" parent="ParallaxBg" instance=ExtResource("2_2a8rs")]
+scroll_scale = Vector2(0.3, 0.3)
+autoscroll = Vector2(-20, 0)
+texture = ExtResource("4_vaxfo")
+
+[node name="Rocks1" parent="ParallaxBg" instance=ExtResource("2_2a8rs")]
+scroll_scale = Vector2(0.5, 0.5)
+autoscroll = Vector2(-50, 0)
+texture = ExtResource("5_ftsea")
+
+[node name="Rocks2" parent="ParallaxBg" instance=ExtResource("2_2a8rs")]
+scroll_scale = Vector2(0.75, 0.75)
+autoscroll = Vector2(-80, 0)
+texture = ExtResource("1_oo4vf")
+
 [node name="ScrollingBg" parent="." instance=ExtResource("2_87uf6")]
+visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
