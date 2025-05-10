@@ -44,6 +44,8 @@ _data = {
 }
 
 [node name="Laser" type="Area2D"]
+collision_layer = 0
+collision_mask = 8
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1, 8)
@@ -55,5 +57,5 @@ shape = SubResource("RectangleShape2D_n2xhb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_w84ap")
+&"": SubResource("AnimationLibrary_w84ap")
 }
