@@ -4,6 +4,7 @@ class_name Pipes
 
 @onready var score_sound: AudioStreamPlayer2D = $ScoreSound
 @onready var von: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
+@onready var laser: Area2D = $Laser
 
 func _ready() -> void:
 	SignalManager.on_plane_died.connect(on_plane_died)
@@ -32,5 +33,6 @@ func _on_pipe_body_entered(body: Node2D) -> void:
 
 func _on_laser_body_entered(body: Node2D) -> void:
 	if body is Tappy:
+		laser.area_entered.disconnect(_on_laser_body_entered) # prevents double scoring, if the place enters the area more than once
 		score_sound.play()
 		ScoreManager.increment_score()
